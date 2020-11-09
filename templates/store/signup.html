@@ -1,0 +1,47 @@
+{% extends 'store/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Crie uma conta
+{% endblock %}
+
+{% block content %}
+    {% if not form.is_valid %}
+        <div class="mx-auto">
+            <br>
+            <h1 class="product_title text-center">
+                Crie uma conta
+            </h1>
+            <br>
+            <div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
+                <br>
+                <p>Ensira as seguintes informacoes para criar uma conta:</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <p>{{ form | crispy }}</p>
+                    <button type="submit" name="button" class="btn btn-secondary">Criar</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    {% else %}
+        <div class="mx-auto">
+        <br>
+        <h1 class="product_title text-center">
+            Sua conta foi criada com sucesso
+        </h1>
+        <br>
+        <div class="container">
+            <p>
+                Querido consumidor,
+                <br>
+                <br>
+                Sua conta foi criada e esta pronta para uso, obrigado por nos escolher!
+                <br>
+                <a href="{% url 'home' %}">Comece suas comprar</a> e aproveite nossas variedades de produtos!
+            </p>
+        </div>
+        </div>
+    {% endif %}
+    </div>
+    <br>
+{% endblock %}

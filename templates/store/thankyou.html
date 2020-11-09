@@ -1,0 +1,20 @@
+{% extends 'store/base.html' %}
+{% block title %}
+Pascucci Development
+{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+    <br>
+    <br>
+    <h1 class="text-center product_title">Thanks for placing your order</h1>
+    <br>
+    <br>
+    <p>Your order number is: <b>{{ customer_order.id }}</b></p>
+    <br>
+    <p>
+        Nos recemos seu pedido e inicaremos a preparacao e o envio o mais rapido possivel
+        um email de confirmacao foi enviado a voce! Ele contem todos os detalhes da sua compra
+    </p>
+    </div>
+{% endblock %}

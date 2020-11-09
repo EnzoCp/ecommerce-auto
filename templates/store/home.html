@@ -1,0 +1,47 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+<!--<div class="row">
+    <img style="width: 100%; height: 350px" src="{% static '/img/django.jpg' %}">
+</div> --!>
+</div>
+
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 mx-auto my-2 text-center">
+                    <h1 class="text-captilize font-weight-bold">Todos os produtos</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-9 mx-auto col-md-6 col-lg-3">
+                    <div class="card mb-5" style="border-color: transparent">
+                        <div class="p-4">
+                            <a href="{{ product.get_url }}">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                            </a>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between"
+                             style="background: transparent; border-color: transparent">
+                            <p class="font-weight-bold mb-0">
+                                {{ product.name }}
+                            </p>
+                            <h5 class="text-info font-italic mb-0">
+                                <span class="mr-1">R$</span> {{ product.price }}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
