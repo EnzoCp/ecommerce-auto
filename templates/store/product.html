@@ -9,13 +9,13 @@ Product
             <div class="col-10 mx-auto col-md-6 my-3">
                 <img class="image-product" src="{{ product.image.url }}" alt="{{ product.name }}">
             </div>
-            <div class="col-10 mx-auto col-md-3 my-3">
+            <div class="col-10 mx-auto col-md-4 my-3">
                 <div>
                     <h1 class="product_title">{{ product.name }}</h1>
                     <h5 class="text-info font-italic mb-3">
                     <span class="mr-1">$</span> {{ product.price }}
                     </h5>
-                    <p class="product_description">Product Description</p>
+                    <p class="product_description">Descricao do Produto</p>
                     <p class="text-justify product_text">{{ product.description }}</p>
                     {% if product.stock <= 0 %}
                     <p class="text-justify product_text"><b>Out of Stock</b></p>
