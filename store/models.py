@@ -122,4 +122,4 @@ class Review(models.Model):
     content = models.CharField(max_length=500)
 
     def __str__(self):
-        return f"self.content"
+        return f"{self.content}"
